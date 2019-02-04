@@ -38,15 +38,19 @@ namespace MyProject
         public void GroupCreationTest()
         {
             GoToHomePage();
-            Login();
-            OpenGroupPage();
+            Login(new AccountData("admin", "secret"));
+            OpenGroupsPage();
             InitGroupCreation();
-            FillGroupsFields();
+            GroupData groupData = new GroupData();
+            groupData.Name = "aaa";
+            groupData.Header = "bbb";
+            groupData.Footer = "ccc";
+            FillGroupFields(groupData);
             SubmitGroupCreation();
-            ReturnToMainPage();
+            ReturnToGroupsPage();
         }
 
-        private void ReturnToMainPage()
+        private void ReturnToGroupsPage()
         {
             driver.FindElement(By.LinkText("group page")).Click();
         }
@@ -56,14 +60,14 @@ namespace MyProject
             driver.FindElement(By.Name("submit")).Click();
         }
 
-        private void FillGroupsFields()
+        private void FillGroupFields(GroupData groupData)
         {
             driver.FindElement(By.Name("group_name")).Clear();
-            driver.FindElement(By.Name("group_name")).SendKeys("1");
+            driver.FindElement(By.Name("group_name")).SendKeys(groupData.Name);
             driver.FindElement(By.Name("group_header")).Clear();
-            driver.FindElement(By.Name("group_header")).SendKeys("1");
+            driver.FindElement(By.Name("group_header")).SendKeys(groupData.Header);
             driver.FindElement(By.Name("group_footer")).Clear();
-            driver.FindElement(By.Name("group_footer")).SendKeys("1");
+            driver.FindElement(By.Name("group_footer")).SendKeys(groupData.Footer);
         }
 
         private void InitGroupCreation()
@@ -71,17 +75,17 @@ namespace MyProject
             driver.FindElement(By.Name("new")).Click();
         }
 
-        private void OpenGroupPage()
+        private void OpenGroupsPage()
         {
             driver.FindElement(By.LinkText("groups")).Click();
         }
 
-        private void Login()
+        private void Login(AccountData accountData)
         {
             driver.FindElement(By.Name("user")).Clear();
-            driver.FindElement(By.Name("user")).SendKeys("admin");
+            driver.FindElement(By.Name("user")).SendKeys(accountData.Username);
             driver.FindElement(By.Name("pass")).Clear();
-            driver.FindElement(By.Name("pass")).SendKeys("secret");
+            driver.FindElement(By.Name("pass")).SendKeys(accountData.Password);
             driver.FindElement(By.XPath("//input[@type='submit']")).Click();
         }
 
