@@ -6,6 +6,7 @@ namespace MyProject
     [TestFixture]
     public class GroupCreationTests : TestBase
     {
+
         [Test]
         public void GroupCreationTest()
         {
@@ -65,7 +66,7 @@ namespace MyProject
 
         public void GoToHomePage()
         {
-            driver.Navigate().GoToUrl("http://localhost/addressbook/");
+            driver.Navigate().GoToUrl("http://localhost:8089/addressbook/");
         }
     }
 }

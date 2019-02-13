@@ -6,15 +6,15 @@ namespace MyProject
 {
     public class TestBase
     {
-        protected IWebDriver driver;
-
-        [SetUp]
+        protected static IWebDriver driver;
+        
+        [OneTimeSetUp]
         public void SetupTest()
         {
             driver = new ChromeDriver();
         }
 
-        [TearDown]
+        [OneTimeTearDown]
         public void TeardownTest()
         {
             driver.Quit();
