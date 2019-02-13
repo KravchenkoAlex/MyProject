@@ -8,30 +8,30 @@ namespace MyProject
         [Test]
         public void GroupCreationTest()
         {
-            GoToHomePage();
-            Login(new AccountData { Username = "admin", Password = "secret" });
-            GoToGroupsPage();
-            InitGroupCreation();
+            navigationHelper.GoToHomePage();
+            loginHelper.Login(new AccountData { Username = "admin", Password = "secret" });
+            navigationHelper.GoToGroupsPage();
+            groupHelper.InitGroupCreation();
             GroupData groupData = new GroupData
             {
                 Name = "aaa",
                 Header = "bbb",
                 Footer = "ccc"
             };
-            FillGroupFields(groupData);
-            SubmitCreation();
-            ReturnToGroupsPage();
+            groupHelper.FillGroupFields(groupData);
+            baseHelper.SubmitCreation();
+            groupHelper.ReturnToGroupsPage();
         }
 
         [Test]
         public void GroupRemovalTest()
         {
-            GoToHomePage();
-            Login(new AccountData { Username = "admin", Password = "secret" });
-            GoToGroupsPage();
-            SelectGroup(1);
-            RemoveGroup();
-            ReturnToGroupsPage();
+            navigationHelper.GoToHomePage();
+            loginHelper.Login(new AccountData { Username = "admin", Password = "secret" });
+            navigationHelper.GoToGroupsPage();
+            groupHelper.SelectGroup(1);
+            groupHelper.RemoveGroup();
+            groupHelper.ReturnToGroupsPage();
         }
     }
 }

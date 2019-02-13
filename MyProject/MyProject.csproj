@@ -56,10 +56,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountData.cs" />
+    <Compile Include="BaseHelper.cs" />
     <Compile Include="ContactCreationTests.cs" />
+    <Compile Include="ContactHelper.cs" />
     <Compile Include="GroupCreationTests.cs" />
     <Compile Include="ContactData.cs" />
     <Compile Include="GroupData.cs" />
+    <Compile Include="GroupHelper.cs" />
+    <Compile Include="LoginHelper.cs" />
+    <Compile Include="NavigationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseTest.cs" />
   </ItemGroup>
