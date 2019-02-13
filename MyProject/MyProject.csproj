@@ -61,7 +61,7 @@
     <Compile Include="ContactData.cs" />
     <Compile Include="GroupData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestBase.cs" />
+    <Compile Include="BaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
