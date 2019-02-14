@@ -6,18 +6,20 @@ namespace MyProject
     {
         private string baseUrl = "http://localhost:8089/addressbook/";
 
-        public NavigationHelper(IWebDriver driver) : base(driver)
+        public NavigationHelper(HelpersManager helpersManager) : base(helpersManager)
         {
         }
 
-        public void GoToGroupsPage()
+        public NavigationHelper GoToGroupsPage()
         {
             driver.FindElement(By.LinkText("groups")).Click();
+            return this;
         }
 
-        public void GoToHomePage()
+        public NavigationHelper GoToHomePage()
         {
             driver.Navigate().GoToUrl(baseUrl);
+            return this;
         }
     }
 }

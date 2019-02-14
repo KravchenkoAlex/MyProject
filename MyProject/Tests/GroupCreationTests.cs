@@ -8,30 +8,37 @@ namespace MyProject
         [Test]
         public void GroupCreationTest()
         {
-            helpersManager.NavigationHelper.GoToHomePage();
-            helpersManager.LoginHelper.Login(new AccountData { Username = "admin", Password = "secret" });
-            helpersManager.NavigationHelper.GoToGroupsPage();
-            helpersManager.GroupHelper.InitGroupCreation();
+            #region SetUp Data
             GroupData groupData = new GroupData
             {
                 Name = "aaa",
                 Header = "bbb",
                 Footer = "ccc"
             };
-            helpersManager.GroupHelper.FillGroupFields(groupData);
-            helpersManager.BaseHelper.SubmitCreation();
-            helpersManager.GroupHelper.ReturnToGroupsPage();
+            #endregion
+
+            helpersManager.GroupHelper.Create(groupData);
         }
 
         [Test]
         public void GroupRemovalTest()
         {
-            helpersManager.NavigationHelper.GoToHomePage();
-            helpersManager.LoginHelper.Login(new AccountData { Username = "admin", Password = "secret" });
-            helpersManager.NavigationHelper.GoToGroupsPage();
-            helpersManager.GroupHelper.SelectGroup(1);
-            helpersManager.GroupHelper.RemoveGroup();
-            helpersManager.GroupHelper.ReturnToGroupsPage();
+            helpersManager.GroupHelper.Remove(1);
+        }
+
+        [Test]
+        public void EmptyGroupCreationTest()
+        {
+            #region SetUp Data
+            GroupData groupData = new GroupData
+            {
+                Name = "",
+                Header = "",
+                Footer = ""
+            };
+            #endregion
+
+            helpersManager.GroupHelper.Create(groupData);
         }
     }
 }

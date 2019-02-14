@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace MyProject
 {
@@ -11,7 +9,17 @@ namespace MyProject
         [SetUp]
         public void SetupTest()
         {
+            #region TestData
+            AccountData accountData = new AccountData
+            {
+                Username = "admin",
+                Password = "secret"
+            };
+            #endregion
+
             helpersManager = new HelpersManager();
+            helpersManager.NavigationHelper.GoToHomePage();
+            helpersManager.LoginHelper.Login(accountData);
         }
 
         [TearDown]

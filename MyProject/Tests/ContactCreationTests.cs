@@ -7,21 +7,20 @@ namespace MyProject
         [Test]
         public void ContectCreationTest()
         {
-            helpersManager.NavigationHelper.GoToHomePage();
-            helpersManager.LoginHelper.Login(new AccountData
-            {
-                Username = "admin",
-                Password = "secret"
-            });
-            helpersManager.ContactHelper.InitContactCreation();
+            #region SetUpData
             ContactData contactData = new ContactData
             {
                 FirstName = "Alex",
                 LastName = "Kravchenko"
             };
-            helpersManager.ContactHelper.FillContactFields(contactData);
-            helpersManager.BaseHelper.SubmitCreation();
-            helpersManager.BaseHelper.ReturnToHomePage();
+            #endregion
+
+            helpersManager.ContactHelper
+                .InitContactCreation()
+                .FillContactFields(contactData);
+            helpersManager.BaseHelper
+                .SubmitCreation()
+                .ReturnToHomePage();
         }
     }
 }

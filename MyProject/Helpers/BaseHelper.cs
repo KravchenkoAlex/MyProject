@@ -5,20 +5,24 @@ namespace MyProject
     public class BaseHelper
     {
         protected IWebDriver driver;
-
-        public BaseHelper(IWebDriver driver)
+        protected HelpersManager helpersManager;
+        
+        public BaseHelper(HelpersManager helpersManager)
         {
-            this.driver = driver;
+            this.helpersManager = helpersManager;
+            this.driver = helpersManager.Driver;
         }
 
-        public void SubmitCreation()
+        public BaseHelper SubmitCreation()
         {
             driver.FindElement(By.Name("submit")).Click();
+            return this;
         }
 
-        public void ReturnToHomePage()
+        public BaseHelper ReturnToHomePage()
         {
             driver.FindElement(By.LinkText("home page")).Click();
+            return this;
         }
     }
 }

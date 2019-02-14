@@ -12,15 +12,23 @@ namespace MyProject
         public GroupHelper GroupHelper { get; }
         public ContactHelper ContactHelper { get; }
         public BaseHelper BaseHelper { get; }
-
+        
         public HelpersManager()
         {
             driver = new ChromeDriver();
-            LoginHelper = new LoginHelper(driver);
-            NavigationHelper = new NavigationHelper(driver);
-            GroupHelper = new GroupHelper(driver);
-            ContactHelper = new ContactHelper(driver);
-            BaseHelper = new BaseHelper(driver);
+            LoginHelper = new LoginHelper(this);
+            NavigationHelper = new NavigationHelper(this);
+            GroupHelper = new GroupHelper(this);
+            ContactHelper = new ContactHelper(this);
+            BaseHelper = new BaseHelper(this);
+        }
+
+        public IWebDriver Driver
+        {
+            get
+            {
+                return driver;
+            }
         }
 
         public void Stop()
