@@ -13,7 +13,7 @@ namespace MyProject
             SelectContact(index);
             InitContactModify(index);
             FillContactFields(contactData);
-            helpersManager.GroupHelper.SubmitUpdate();
+            SubmitUpdate();
             ReturnToHomePage();
             return this;
         }
@@ -22,9 +22,8 @@ namespace MyProject
         {
             helpersManager.NavigationHelper.InitContactCreation();
             FillContactFields(contactData);
-            helpersManager.BaseHelper
-                .SubmitCreation()
-                .ReturnToHomePage();
+            SubmitCreation();
+            ReturnToHomePage();
             return this;
         }
 

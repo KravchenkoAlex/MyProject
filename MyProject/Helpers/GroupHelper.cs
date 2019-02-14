@@ -37,13 +37,7 @@ namespace MyProject
             ReturnToGroupsPage();
             return this;
         }
-
-        public GroupHelper SubmitUpdate()
-        {
-            driver.FindElement(By.XPath("//input[@value='Update']")).Click();
-            return this;
-        }
-
+        
         public GroupHelper InitGroupModify()
         {
             driver.FindElement(By.Name("edit")).Click();

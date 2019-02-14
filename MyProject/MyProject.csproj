@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests\Contacts\ContactModificationTests.cs" />
-    <Compile Include="ContactRemovalTests.cs" />
+    <Compile Include="Tests\Contacts\ContactRemovalTests.cs" />
     <Compile Include="Tests\Groups\GroupModificationTests.cs" />
     <Compile Include="Tests\Groups\GroupRemovalTests.cs" />
     <Compile Include="Model\AccountData.cs" />

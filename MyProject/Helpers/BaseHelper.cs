@@ -24,5 +24,11 @@ namespace MyProject
             driver.FindElement(By.LinkText("home page")).Click();
             return this;
         }
+
+        public BaseHelper SubmitUpdate()
+        {
+            driver.FindElement(By.XPath("//input[@value='Update']")).Click();
+            return this;
+        }
     }
 }
