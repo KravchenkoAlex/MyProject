@@ -18,12 +18,35 @@ namespace MyProject
             return this;
         }
 
+        internal GroupHelper Modify(int index, GroupData groupData)
+        {
+            helpersManager.NavigationHelper.GoToGroupsPage();
+            SelectGroup(index);
+            InitGroupModify();
+            FillGroupFields(groupData);
+            SubmitUpdate();
+            ReturnToGroupsPage();
+            return this;
+        }
+
         public GroupHelper Remove(int index)
         {
             helpersManager.NavigationHelper.GoToGroupsPage();
-            SelectGroup(1);
+            SelectGroup(index);
             RemoveGroup();
             ReturnToGroupsPage();
+            return this;
+        }
+
+        private GroupHelper SubmitUpdate()
+        {
+            driver.FindElement(By.Name("update")).Click();
+            return this;
+        }
+
+        private GroupHelper InitGroupModify()
+        {
+            driver.FindElement(By.Name("edit")).Click();
             return this;
         }
 

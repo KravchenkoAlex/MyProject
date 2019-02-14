@@ -21,12 +21,6 @@ namespace MyProject
         }
 
         [Test]
-        public void GroupRemovalTest()
-        {
-            helpersManager.GroupHelper.Remove(1);
-        }
-
-        [Test]
         public void EmptyGroupCreationTest()
         {
             #region SetUp Data
