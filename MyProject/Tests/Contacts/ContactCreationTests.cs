@@ -15,12 +15,7 @@ namespace MyProject
             };
             #endregion
 
-            helpersManager.ContactHelper
-                .InitContactCreation()
-                .FillContactFields(contactData);
-            helpersManager.BaseHelper
-                .SubmitCreation()
-                .ReturnToHomePage();
+            helpersManager.ContactHelper.Create(contactData);
         }
     }
 }

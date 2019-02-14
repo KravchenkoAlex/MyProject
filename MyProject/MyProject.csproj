@@ -55,13 +55,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests\GroupModificationTests.cs" />
-    <Compile Include="Tests\GroupRemovalTests.cs" />
+    <Compile Include="Tests\Contacts\ContactModificationTests.cs" />
+    <Compile Include="ContactRemovalTests.cs" />
+    <Compile Include="Tests\Groups\GroupModificationTests.cs" />
+    <Compile Include="Tests\Groups\GroupRemovalTests.cs" />
     <Compile Include="Model\AccountData.cs" />
     <Compile Include="Helpers\BaseHelper.cs" />
-    <Compile Include="Tests\ContactCreationTests.cs" />
+    <Compile Include="Tests\Contacts\ContactCreationTests.cs" />
     <Compile Include="Helpers\ContactHelper.cs" />
-    <Compile Include="Tests\GroupCreationTests.cs" />
+    <Compile Include="Tests\Groups\GroupCreationTests.cs" />
     <Compile Include="Model\ContactData.cs" />
     <Compile Include="Model\GroupData.cs" />
     <Compile Include="Helpers\GroupHelper.cs" />

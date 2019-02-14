@@ -21,5 +21,17 @@ namespace MyProject
             driver.Navigate().GoToUrl(baseUrl);
             return this;
         }
+
+        public NavigationHelper NavigateToHome()
+        {
+            driver.FindElement(By.LinkText("home")).Click();
+            return this;
+        }
+
+        public NavigationHelper InitContactCreation()
+        {
+            driver.FindElement(By.LinkText("add new")).Click();
+            return this;
+        }
     }
 }

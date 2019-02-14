@@ -18,7 +18,7 @@ namespace MyProject
             return this;
         }
 
-        internal GroupHelper Modify(int index, GroupData groupData)
+        public GroupHelper Modify(int index, GroupData groupData)
         {
             helpersManager.NavigationHelper.GoToGroupsPage();
             SelectGroup(index);
@@ -38,13 +38,13 @@ namespace MyProject
             return this;
         }
 
-        private GroupHelper SubmitUpdate()
+        public GroupHelper SubmitUpdate()
         {
-            driver.FindElement(By.Name("update")).Click();
+            driver.FindElement(By.XPath("//input[@value='Update']")).Click();
             return this;
         }
 
-        private GroupHelper InitGroupModify()
+        public GroupHelper InitGroupModify()
         {
             driver.FindElement(By.Name("edit")).Click();
             return this;
