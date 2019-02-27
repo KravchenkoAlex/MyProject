@@ -30,5 +30,14 @@ namespace MyProject
             driver.FindElement(By.XPath("//input[@value='Update']")).Click();
             return this;
         }
+
+        public void Type(By locator, string text)
+        {
+            if (text != null)
+            {
+                driver.FindElement(locator).Clear();
+                driver.FindElement(locator).SendKeys(text);
+            }
+        }
     }
 }

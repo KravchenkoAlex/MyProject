@@ -12,8 +12,8 @@ namespace MyProject
             GroupData groupData = new GroupData
             {
                 Name = "111",
-                Header = "222",
-                Footer = "333"
+                Header = null,
+                Footer = null
             };
             #endregion
 
