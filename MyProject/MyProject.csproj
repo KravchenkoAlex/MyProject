@@ -55,8 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthBaseTest.cs" />
-    <Compile Include="LoginTests.cs" />
+    <Compile Include="Tests\AuthBaseTest.cs" />
+    <Compile Include="Tests\Login\LoginTests.cs" />
     <Compile Include="Tests\Contacts\ContactModificationTests.cs" />
     <Compile Include="Tests\Contacts\ContactRemovalTests.cs" />
     <Compile Include="Tests\Groups\GroupModificationTests.cs" />
