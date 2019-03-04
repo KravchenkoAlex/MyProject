@@ -4,7 +4,7 @@ namespace MyProject
 {
     public class NavigationHelper : BaseHelper
     {
-        private string baseUrl = "http://localhost:8089/addressbook/";
+        private string baseUrl = "http://localhost/addressbook/";
 
         public NavigationHelper(HelpersManager helpersManager) : base(helpersManager)
         {

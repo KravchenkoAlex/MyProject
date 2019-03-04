@@ -7,7 +7,7 @@ namespace MyProject
         protected HelpersManager helpersManager;
 
         [SetUp]
-        public void SetupTest()
+        public void SetupApplicationManager()
         {
             helpersManager = HelpersManager.GetInstance();
         }

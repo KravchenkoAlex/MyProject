@@ -3,7 +3,7 @@
 namespace MyProject
 {
     [TestFixture]
-    public class GroupRemovalTests : BaseTest
+    public class GroupRemovalTests : AuthBaseTest
     {
         [Test]
         public void GroupRemovalTest()

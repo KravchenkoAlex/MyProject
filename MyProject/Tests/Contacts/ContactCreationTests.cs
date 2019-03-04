@@ -2,7 +2,7 @@
 
 namespace MyProject
 {
-    class ContactCreationTests : BaseTest
+    class ContactCreationTests : AuthBaseTest
     {
         [Test]
         public void ContectCreationTest()

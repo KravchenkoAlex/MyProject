@@ -3,7 +3,7 @@
 namespace MyProject
 {
     [TestFixture]
-    public class ContactModificationTests : BaseTest
+    public class ContactModificationTests : AuthBaseTest
     {
         [Test]
         public void ContactModificationTest()

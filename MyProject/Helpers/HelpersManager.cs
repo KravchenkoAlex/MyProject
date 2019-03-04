@@ -34,7 +34,9 @@ namespace MyProject
         {
             if (! instance.IsValueCreated)
             {
-                instance.Value = new HelpersManager();
+                HelpersManager newInstance = new HelpersManager();
+                newInstance.NavigationHelper.GoToHomePage();
+                instance.Value = newInstance;
             }
 
             return instance.Value;
