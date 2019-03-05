@@ -4,22 +4,31 @@ namespace MyProject
 {
     public class NavigationHelper : BaseHelper
     {
-        private string baseUrl = "http://localhost/addressbook/";
+        private string baseUrl = "http://localhost:8089/addressbook/";
 
         public NavigationHelper(HelpersManager helpersManager) : base(helpersManager)
         {
         }
 
-        public NavigationHelper GoToGroupsPage()
+        public void GoToGroupsPage()
         {
+            if (driver.Url == baseUrl + "group.php"
+                && IsElementPresent(By.Name("new")))
+            {
+                return;
+            }
+
             driver.FindElement(By.LinkText("groups")).Click();
-            return this;
         }
 
-        public NavigationHelper GoToHomePage()
+        public void GoToHomePage()
         {
+            if (driver.Url == baseUrl)
+            {
+                return;
+            }
+
             driver.Navigate().GoToUrl(baseUrl);
-            return this;
         }
 
         public NavigationHelper NavigateToHome()
