@@ -10,6 +10,17 @@ namespace MyProject
 
         public ContactHelper Modify(int index, ContactData contactData)
         {
+            if (IsElementPresent(By.XPath($"//tr[@name='entry'][{index}]/td/input")))
+            {
+                SelectContact(index);
+                InitContactModify(index);
+                FillContactFields(contactData);
+                SubmitUpdate();
+                ReturnToHomePage();
+                return this;
+            }
+
+            Create(new ContactData { FirstName = "First", LastName = "Last" });
             SelectContact(index);
             InitContactModify(index);
             FillContactFields(contactData);
@@ -29,6 +40,16 @@ namespace MyProject
 
         public ContactHelper Remove(int index)
         {
+            if (IsElementPresent(By.XPath($"//tr[@name='entry'][{index}]/td/input")))
+            {
+                SelectContact(index);
+                InitContactModify(index);
+                SubmitDelete();
+                helpersManager.NavigationHelper.NavigateToHome();
+                return this;
+            }
+
+            Create(new ContactData { FirstName = "First", LastName = "Last" });
             SelectContact(index);
             InitContactModify(index);
             SubmitDelete();

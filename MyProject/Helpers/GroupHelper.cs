@@ -21,6 +21,19 @@ namespace MyProject
         public GroupHelper Modify(int index, GroupData groupData)
         {
             helpersManager.NavigationHelper.GoToGroupsPage();
+
+            if (IsElementPresent(By.XPath($"//input[@name='selected[]'][{index}]")))
+            {
+                SelectGroup(index);
+                InitGroupModify();
+                FillGroupFields(groupData);
+                SubmitUpdate();
+                ReturnToGroupsPage();
+                return this;
+            }
+
+            Create(new GroupData { Name = "aaa", Footer = "bbb", Header = "ccc" });
+            helpersManager.NavigationHelper.GoToGroupsPage();
             SelectGroup(index);
             InitGroupModify();
             FillGroupFields(groupData);
@@ -32,6 +45,16 @@ namespace MyProject
         public GroupHelper Remove(int index)
         {
             helpersManager.NavigationHelper.GoToGroupsPage();
+
+            if (IsElementPresent(By.XPath($"//input[@name='selected[]'][{index}]")))
+            {
+                SelectGroup(index);
+                RemoveGroup();
+                ReturnToGroupsPage();
+                return this;
+            }
+
+            Create(new GroupData { Name = "aaa", Footer = "bbb", Header = "ccc" });
             SelectGroup(index);
             RemoveGroup();
             ReturnToGroupsPage();
